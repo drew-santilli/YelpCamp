@@ -1,0 +1,22 @@
+# Start by making a models directory
+# Then insert a model js file `<model>.js`
+
+
+******OPEN MODEL
+
+	~ Create Model ~
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;   
+//Schema = mongoose.Schema is a reference shortcut
+
+const CampgroundSchema = new Schema({
+    title: String,
+    price: Number,
+    description: String,
+    location: String
+});
+
+
+module.exports = mongoose.model('Campground', CampgroundSchema)
+//'Campground' is the name, CampgroundSchema is the schema
+//This is exporting and compiling
