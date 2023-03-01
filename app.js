@@ -3,8 +3,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const Campground = require('./models/campground')
 
-mongoose.connect('mongodb://127.0.0.1:27017/YelpCamp', { 
-    useNewUrlParser: true, 
+mongoose.connect('mongodb://127.0.0.1:27017/YelpCamp', {
+    useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
@@ -29,10 +29,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', (req, res) => {
     res.render('home')
 })
-app.get('/makecampground', async (req, res) => {
-    const camp = new Campground({title: 'My Backyard', description: "Cheap camping!"});
-    await camp.save();
-    res.send(camp)
+
+app.get('/campgrounds', async (req, res) => {
+    const campgrounds = await Campground.find({});
+    res.render('campgrounds/index', { campgrounds })
 })
 
 

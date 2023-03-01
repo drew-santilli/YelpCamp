@@ -1,0 +1,2 @@
+ const c = new Campground({title: 'purple field'});
+    await c.save();
