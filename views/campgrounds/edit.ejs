@@ -8,15 +8,19 @@
                 <label class="form-label" for="title">Title</label>
                 <input class="form-control" type="text" name="campground[title]" id="title"
                     value="<%= campground.title %>" required>
+                <div class="valid-feedback">Looks good!</div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="title">Location</label>
                 <input class="form-control" type="text" name="campground[location]" id="location"
                     value="<%= campground.location %>" required>
+                <div class="valid-feedback">Looks good!</div>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="image">Image Url</label>
-                <input class="form-control" type="text" name="campground[image]" id="image" value="" required>
+                <input class="form-control" type="text" name="campground[image]" id="image"
+                    value="<%= campground.image %>" required>
+                <div class="valid-feedback">Looks good!</div>
             </div>
             <div class=" mb-3">
                 <label class="form-label" for="price">Campground Price</label>
@@ -24,6 +28,7 @@
                     <span class="input-group-text" id="price-label">$</span>
                     <input type="text" class="form-control" id="price" name="campground[price]" placeholder="0"
                         aria-label="price" aria-describedby="price-label" value="<%= campground.price %>" required>
+                    <div class="valid-feedback">Looks good!</div>
                 </div>
             </div>
             <div class="mb-3">
